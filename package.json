@@ -1,0 +1,21 @@
+{
+  "name": "daily-routine-planner",
+  "version": "1.0.0",
+  "description": "A daily routine planner app",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.5",
+    "express-session": "^1.17.1",
+    "pg": "^8.5.1",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^6.3.5"
+  },
+  "author": "Your Name",
+  "license": "ISC"
+}
