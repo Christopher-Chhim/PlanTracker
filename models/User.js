@@ -3,7 +3,6 @@ const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
 class User extends Model {
-  // Checks the password against the encrypted password in the database.
   checkPassword(loginPw) {
     return bcrypt.compareSync(loginPw, this.password);
   }
@@ -38,7 +37,6 @@ User.init(
     },
   },
   {
-    // Hooks are used so that if a user is created or updated, the password is encrypted before being stored in the database.
     hooks: {
       beforeCreate: async (newUserData) => {
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
