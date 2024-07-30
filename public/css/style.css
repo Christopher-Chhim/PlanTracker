@@ -1,0 +1,39 @@
+    /* Default theme (day) */
+    body {
+      background-color: #ffffff;
+      color: #000000;
+      transition: background-color 0.3s, color 0.3s;
+  }
+
+  /* Dark theme */
+  body.night-theme {
+      background-color: #333333;
+      color: #ffffff;
+  }
+
+  .navbar-light {
+      background-color: #f8f9fa;
+  }
+
+  .navbar-light.night-theme {
+      background-color: #343a40;
+  }
+
+  .footer {
+      background-color: #f8f9fa;
+  }
+
+  .footer.night-theme {
+      background-color: #343a40;
+  }
+
+  /* Button styles */
+  .btn-primary {
+      background-color: #007bff;
+      border-color: #007bff;
+  }
+
+  .btn-primary.night-theme {
+      background-color: #0056b3;
+      border-color: #004085;
+  }
