@@ -1,20 +1,32 @@
-const { ShoppingList } = require('../models');
+const router = require('express').Router();
+const { ShoppingList } = require('../../models');
+const withAuth = require('../../utils/auth');
 
-exports.getAllShoppingLists = async (req, res) => {
+// Route to create a new shopping list item
+router.post('/', withAuth, async (req, res) => {
   try {
-    const shoppingLists = await ShoppingList.findAll();
-    res.render('shoppingLists/index', { shoppingLists });
-  } catch (error) {
-    res.status(500).send(error.message);
+    const newShoppingListItem = await ShoppingList.create({
+      ...req.body,
+      user_id: req.session.user_id, // Associate shopping list item with the logged-in user
+    });
+    res.status(200).json(newShoppingListItem);
+  } catch (err) {
+    res.status(400).json(err);
   }
-};
+});
 
-exports.createShoppingList = async (req, res) => {
+// Route to get all shopping list items associated with the logged-in user
+router.get('/', withAuth, async (req, res) => {
   try {
-    const { item, quantity } = req.body;
-    await ShoppingList.create({ item, quantity });
-    res.redirect('/shopping-lists');
-  } catch (error) {
-    res.status(500).send(error.message);
+    const shoppingListData = await ShoppingList.findAll({
+      where: {
+        user_id: req.session.user_id,
+      },
+    });
+    res.status(200).json(shoppingListData);
+  } catch (err) {
+    res.status(500).json(err);
   }
-};
+});
+
+module.exports = router;
