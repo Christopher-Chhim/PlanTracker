@@ -3,7 +3,7 @@ const { User, Event, Career, ShoppingList, Vacation } = require('../models');
 const withAuth = require('../utils/auth');
 
 // Home route
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
     res.render('home', {
       logged_in: req.session.logged_in,
@@ -30,6 +30,7 @@ router.get('/register', (req, res) => {
   }
   res.render('register');
 });
+
 
 // User profile route
 router.get('/profile', withAuth, async (req, res) => {
