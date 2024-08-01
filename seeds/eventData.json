@@ -1,0 +1,33 @@
+[
+    {
+      "title": "Annual Tech Conference",
+      "date": "2024-09-15T09:00:00.000Z",
+      "description": "A conference showcasing the latest in technology and innovation.",
+      "user_id": 1
+    },
+    {
+      "title": "Project Launch Party",
+      "date": "2024-10-05T18:00:00.000Z",
+      "description": "Celebration for the successful launch of our new project.",
+      "user_id": 2
+    },
+    {
+      "title": "Team Building Retreat",
+      "date": "2024-11-20T08:00:00.000Z",
+      "description": "A retreat focused on team building and skill development.",
+      "user_id": 1
+    },
+    {
+      "title": "Holiday Office Party",
+      "date": "2024-12-15T19:00:00.000Z",
+      "description": "Office party to celebrate the holiday season.",
+      "user_id": 3
+    },
+    {
+      "title": "Marketing Strategy Workshop",
+      "date": "2024-08-10T10:00:00.000Z",
+      "description": "Workshop to develop and refine marketing strategies.",
+      "user_id": 2
+    }
+  ]
+  
