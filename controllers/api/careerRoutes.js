@@ -1,20 +1,32 @@
-const { Career } = require('../models');
+const router = require('express').Router();
+const { Career } = require('../../models');
+const withAuth = require('../../utils/auth');
 
-exports.getAllCareers = async (req, res) => {
+// Route to create a new career
+router.post('/', withAuth, async (req, res) => {
   try {
-    const careers = await Career.findAll();
-    res.render('careers/index', { careers });
-  } catch (error) {
-    res.status(500).send(error.message);
+    const newCareer = await Career.create({
+      ...req.body,
+      user_id: req.session.user_id, // Associate career with the logged-in user
+    });
+    res.status(200).json(newCareer);
+  } catch (err) {
+    res.status(400).json(err);
   }
-};
+});
 
-exports.createCareer = async (req, res) => {
+// Route to get all careers associated with the logged-in user
+router.get('/', withAuth, async (req, res) => {
   try {
-    const { jobTitle, company, startDate, endDate } = req.body;
-    await Career.create({ jobTitle, company, startDate, endDate });
-    res.redirect('/careers');
-  } catch (error) {
-    res.status(500).send(error.message);
+    const careerData = await Career.findAll({
+      where: {
+        user_id: req.session.user_id,
+      },
+    });
+    res.status(200).json(careerData);
+  } catch (err) {
+    res.status(500).json(err);
   }
-};
+});
+
+module.exports = router;
