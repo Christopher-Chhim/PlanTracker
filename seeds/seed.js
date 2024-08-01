@@ -4,11 +4,11 @@ const { User, Project, Event, Career, ShoppingList, Vacation } = require('../mod
 
 // Import the JSON data or define the seed data here
 const userData = require('./userData.json');
-const projectData = require('./projectData.json');
-// const eventData = require('./eventData.json');
-// const careerData = require('./careerData.json');
-// const shoppingListData = require('./shoppingListData.json');
-// const vacationData = require('./vacationData.json');
+const eventData = require('./eventData.json');
+const careerData = require('./careerData.json');
+const shoppingListData = require('./shoppingListData.json');
+const vacationData = require('./vacationData.json');
+
 
 const seedDatabase = async () => {
   try {
@@ -19,46 +19,37 @@ const seedDatabase = async () => {
       individualHooks: true, // For hashing passwords
       returning: true,
     });
-
-    // Seed projects
-    for (const project of projectData) {
-      await Project.create({
-        ...project,
+    // Seed events
+    for (const event of eventData) {
+      await Event.create({
+        ...event,
         user_id: users[Math.floor(Math.random() * users.length)].id, // Randomly assign user_id
       });
     }
 
-    // // Seed events
-    // for (const event of eventData) {
-    //   await Event.create({
-    //     ...event,
-    //     user_id: users[Math.floor(Math.random() * users.length)].id, // Randomly assign user_id
-    //   });
-    // }
+    // Seed careers
+    for (const career of careerData) {
+      await Career.create({
+        ...career,
+        user_id: users[Math.floor(Math.random() * users.length)].id, // Randomly assign user_id
+      });
+    }
 
-    // // Seed careers
-    // for (const career of careerData) {
-    //   await Career.create({
-    //     ...career,
-    //     user_id: users[Math.floor(Math.random() * users.length)].id, // Randomly assign user_id
-    //   });
-    // }
+    // Seed shopping lists
+    for (const item of shoppingListData) {
+      await ShoppingList.create({
+        ...item,
+        user_id: users[Math.floor(Math.random() * users.length)].id, // Randomly assign user_id
+      });
+    }
 
-    // // Seed shopping lists
-    // for (const item of shoppingListData) {
-    //   await ShoppingList.create({
-    //     ...item,
-    //     user_id: users[Math.floor(Math.random() * users.length)].id, // Randomly assign user_id
-    //   });
-    // }
-
-    // // Seed vacations
-    // for (const vacation of vacationData) {
-    //   await Vacation.create({
-    //     ...vacation,
-    //     user_id: users[Math.floor(Math.random() * users.length)].id, // Randomly assign user_id
-    //   });
-    // }
+    // Seed vacations
+    for (const vacation of vacationData) {
+      await Vacation.create({
+        ...vacation,
+        user_id: users[Math.floor(Math.random() * users.length)].id, // Randomly assign user_id
+      });
+    }
 
     console.log('Database seeded successfully!');
     process.exit(0); // Exit the process
@@ -70,3 +61,7 @@ const seedDatabase = async () => {
 };
 
 seedDatabase();
+
+    
+    
+
