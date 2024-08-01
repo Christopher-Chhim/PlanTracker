@@ -92,6 +92,4 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-
-    // Add any other custom JavaScript functionality below
 });
