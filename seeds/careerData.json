@@ -1,0 +1,32 @@
+[
+  {
+    "jobTitle": "Front End Developer",
+    "company": "Tech Innovations Inc.",
+    "startDate": "2023-01-01T00:00:00.000Z",
+    "endDate": "2024-06-30T00:00:00.000Z"
+  },
+  {
+    "jobTitle": "Barista",
+    "company": "Starbucks - Target",
+    "startDate": "2023-07-01T00:00:00.000Z",
+    "endDate": "2024-06-30T00:00:00.000Z"
+  },
+  {
+    "jobTitle": "Department Lead",
+    "company": "Harris Teeter",
+    "startDate": "2022-01-01T00:00:00.000Z",
+    "endDate": "2023-06-30T00:00:00.000Z"
+  },
+  {
+    "jobTitle": "Junior Developer Intern",
+    "company": "Web Dev Co.",
+    "startDate": "2021-06-01T00:00:00.000Z",
+    "endDate": "2021-12-31T00:00:00.000Z"
+  },
+  {
+    "jobTitle": "Marketing Coordinator",
+    "company": "Creative Solutions LLC",
+    "startDate": "2020-01-01T00:00:00.000Z",
+    "endDate": "2020-12-31T00:00:00.000Z"
+  }
+]

@@ -1,0 +1,28 @@
+[
+    {
+      "destination": "Paris",
+      "startDate": "2024-05-01T00:00:00.000Z",
+      "endDate": "2024-05-10T00:00:00.000Z"
+    },
+    {
+      "destination": "Senegal",
+      "startDate": "2024-06-15T00:00:00.000Z",
+      "endDate": "2024-06-25T00:00:00.000Z"
+    },
+    {
+      "destination": "Ethiopia",
+      "startDate": "2024-07-05T00:00:00.000Z",
+      "endDate": "2024-07-15T00:00:00.000Z"
+    },
+    {
+      "destination": "New York",
+      "startDate": "2024-08-01T00:00:00.000Z",
+      "endDate": "2024-08-10T00:00:00.000Z"
+    },
+    {
+      "destination": "Canada",
+      "startDate": "2024-09-10T00:00:00.000Z",
+      "endDate": "2024-09-20T00:00:00.000Z"
+    }
+  ]
+  
