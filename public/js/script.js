@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         try {
-          const response = await fetch(endpoint, {
+          const response = await fetch(, {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {
