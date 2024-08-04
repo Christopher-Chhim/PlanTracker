@@ -23,9 +23,9 @@ router.get('/login', (req, res) => {
 });
 
 // // Logout route
-// router.get('/logout', (req, res) => {
-//   res.redirect('login');
-// });
+router.get('/logout', (req, res) => {
+  res.redirect('login');
+});
 
 // Register route
 router.get('/register', (req, res) => {
