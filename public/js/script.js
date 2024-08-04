@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Handle form submissions using Axios
+  // Handle form submissions using Fetch API
   const handleFormSubmit = (formSelector, endpoint) => {
     const form = document.querySelector(formSelector);
     if (form) {
@@ -12,14 +12,22 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         try {
-          const response = await axios.post(endpoint, data);
-          if (response.status === 200) {
+          const response = await fetch(endpoint, {
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: {
+              'Content-Type': 'application/json',
+            },
+          });
+
+          if (response.ok) {
             window.location.reload();
           } else {
-            alert("There was an error submitting the form.");
+            const errorData = await response.json();
+            alert(`Error: ${errorData.message}`);
           }
         } catch (error) {
-          alert(error.response.data.message);
+          alert(`Error: ${error.message}`);
         }
       });
     }
@@ -28,10 +36,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initialize form submissions for different forms
   handleFormSubmit('form[action="/api/users/login"]', "/api/users/login");
   handleFormSubmit('form[action="/api/users/register"]', "/api/users/register");
-  handleFormSubmit('form[action="/events"]', "/events");
-  handleFormSubmit('form[action="/shopping"]', "/shopping");
-  handleFormSubmit('form[action="/vacations"]', "/vacations");
-  handleFormSubmit('form[action="/careers"]', "/careers");
+  handleFormSubmit('form[action="/events"]', "/api/events");
+  handleFormSubmit('form[action="/shopping"]', "/api/shopping");
+  handleFormSubmit('form[action="/vacations"]', "/api/vacations");
+  handleFormSubmit('form[action="/api/career"]', "/career");
 
   // Client-side form validation
   const validateForm = (formSelector, rules) => {
