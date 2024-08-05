@@ -3,7 +3,7 @@ const { Career } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // Route to create a new career
-router.post('/career', withAuth, async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
   try {
     const newCareer = await Career.create({
       ...req.body,
@@ -16,7 +16,7 @@ router.post('/career', withAuth, async (req, res) => {
 });
 
 // Route to get all careers associated with the logged-in user
-router.get('/career', withAuth, async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
     const careerData = await Career.findAll({
       where: {

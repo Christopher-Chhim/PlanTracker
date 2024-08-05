@@ -1,23 +1,27 @@
 const router = require('express').Router();
-const { Project } = require('../../models');
+const { Project, Vacation } = require('../../models');
+const { rawAttributes } = require('../../models/User');
 const withAuth = require('../../utils/auth');
+
 
 router.post('/', withAuth, async (req, res) => {
   try {
-    const newProject = await Project.create({
+    
+    const newProject = await Vacation.create({
       ...req.body,
       user_id: req.session.user_id,
     });
 
     res.status(200).json(newProject);
   } catch (err) {
+    
     res.status(400).json(err);
   }
 });
 
 router.delete('/:id', withAuth, async (req, res) => {
   try {
-    const projectData = await Project.destroy({
+    const projectData = await Vacation.destroy({
       where: {
         id: req.params.id,
         user_id: req.session.user_id,
