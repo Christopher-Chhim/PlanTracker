@@ -23,6 +23,11 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+// // Logout route
+router.get('/logout', (req, res) => {
+  res.redirect('login');
+});
+
 // Register route
 router.get('/register', (req, res) => {
   if (req.session.logged_in) {
@@ -74,7 +79,7 @@ router.get('/events', withAuth, async (req, res) => {
 });
 
 // Careers route
-router.get('/careers', withAuth, async (req, res) => {
+router.get('/career', withAuth, async (req, res) => {
   try {
     const careerData = await Career.findAll({
       where: {
@@ -84,7 +89,7 @@ router.get('/careers', withAuth, async (req, res) => {
 
     const careers = careerData.map((career) => career.get({ plain: true }));
 
-    res.render('careers', {
+    res.render('career', {
       careers,
       logged_in: req.session.logged_in,
     });
@@ -94,7 +99,7 @@ router.get('/careers', withAuth, async (req, res) => {
 });
 
 // Shopping Lists route
-router.get('/shopping-lists', withAuth, async (req, res) => {
+router.get('/shoppingList', withAuth, async (req, res) => {
   try {
     const shoppingListData = await ShoppingList.findAll({
       where: {
@@ -104,7 +109,7 @@ router.get('/shopping-lists', withAuth, async (req, res) => {
 
     const shoppingLists = shoppingListData.map((list) => list.get({ plain: true }));
 
-    res.render('shopping-lists', {
+    res.render('shopping', {
       shoppingLists,
       logged_in: req.session.logged_in,
     });
