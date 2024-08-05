@@ -1,30 +1,35 @@
 [
   {
     "jobTitle": "Front End Developer",
+    "description": "Develop the client-side interface",
     "company": "Tech Innovations Inc.",
     "startDate": "2023-01-01T00:00:00.000Z",
     "endDate": "2024-06-30T00:00:00.000Z"
   },
   {
     "jobTitle": "Barista",
+    "description": "Brew coffee and other drinks at customer request",
     "company": "Starbucks - Target",
     "startDate": "2023-07-01T00:00:00.000Z",
     "endDate": "2024-06-30T00:00:00.000Z"
   },
   {
     "jobTitle": "Department Lead",
+    "description": "Manage employees within a specified department",
     "company": "Harris Teeter",
     "startDate": "2022-01-01T00:00:00.000Z",
     "endDate": "2023-06-30T00:00:00.000Z"
   },
   {
     "jobTitle": "Junior Developer Intern",
+    "description": "Interning as a Junior Software Developer for a certain company",
     "company": "Web Dev Co.",
     "startDate": "2021-06-01T00:00:00.000Z",
     "endDate": "2021-12-31T00:00:00.000Z"
   },
   {
     "jobTitle": "Marketing Coordinator",
+    "description": "Help marketers advertise certain products for the company",
     "company": "Creative Solutions LLC",
     "startDate": "2020-01-01T00:00:00.000Z",
     "endDate": "2020-12-31T00:00:00.000Z"

@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { User, Event, Career, ShoppingList, Vacation } = require('../models');
 const withAuth = require('../utils/auth');
 
+
 // Home route
 router.get('/', withAuth, async (req, res) => {
   try {
