@@ -1,2 +1,72 @@
-<h1>Welcome to PlanTracker</h1>
-<p>Manage and organize your plans across events, shopping lists, vacations, and careers.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What Do You Want To Build On?</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/users/login">Login</a></li>
+        <li><a href="/users/register">Register</a></li>
+        <li><a href="/career">Careers</a></li>
+        <li><a href="/vacation">Vacation</a></li>
+        <li><a href="/shoppingList">Shopping List</a></li>
+        <li><a href="/event">Events</a></li>
+
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="welcome">
+      <h1>Welcome to the Career Portal</h1>
+      <p>Explore various career opportunities and manage your career profile.</p>
+    </section>
+
+    {{#if careers.length}}
+      <section class="careers">
+        <h2>Your Careers</h2>
+        <ul>
+          {{#each careers}}
+            <li>{{this.title}} - {{this.description}}</li>
+          {{/each}}
+        </ul>
+      </section>
+    {{else}}
+      <section class="no-careers">
+        <h2>No careers found</h2>
+        <p>You have not added any careers yet. Start by creating a new career entry!</p>
+      </section>
+    {{/if}}
+
+          <h1>Welcome to the Career Portal</h1>
+      <p>Explore various career opportunities and manage your career profile.</p>
+    </section>
+
+    {{#if vacation.length}}
+      <section class="vacation">
+        <h2>Your Vacations</h2>
+        <ul>
+          {{#each vation}}
+            <li>{{this.title}} - {{this.description}}</li>
+          {{/each}}
+        </ul>
+      </section>
+    {{else}}
+      <section class="no-vacation">
+        <h2>No Vacations found</h2>
+        <p>You have not added any vacations yet. Start by creating a new vacation entry!</p>
+      </section>
+    {{/if}}
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Career Portal. All rights reserved.</p>
+  </footer>
+</body>
+</html>
