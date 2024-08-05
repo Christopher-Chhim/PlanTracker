@@ -12,10 +12,16 @@
 </form>
 <hr>
 <ul class="list-group">
-    {{#each shoppingList}}
-        <li class="list-group-item">
-            <h5>{{this.item}}</h5>
-            <p>Quantity: {{this.quantity}}</p>
-        </li>
-    {{/each}}
+    {{#if shoppingList.length}}
+        <ul>
+            {{#each shoppingList}}
+                <li class="list-group-item">
+                <h5>{{this.item}}</h5>
+                <p>Quantity: {{this.quantity}}</p>
+                </li>
+            {{/each}}
+        </ul>
+    {{else}}
+        <p>No shopping list generated. Add shopping items to generate a shopping list.</p>
+    {{/if}}
 </ul>
