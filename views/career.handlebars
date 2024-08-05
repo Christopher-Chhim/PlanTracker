@@ -20,12 +20,18 @@
 </form>
 <hr>
 <ul class="list-group">
-    {{#each careers}}
-        <li class="list-group-item">
-            <h5>{{this.company}}</h5>
-            <p>Position: {{this.position}}</p>
-            <p>Start Date: {{this.start_date}}</p>
-            <p>End Date: {{this.end_date}}</p>
-        </li>
-    {{/each}}
+    {{#if careers.length}}
+        <ul>
+            {{#each careers}}
+                <li class="list-group-item">
+                <h5>{{this.company}}</h5>
+                <p>Position: {{this.position}}</p>
+                <p>Start Date: {{this.start_date}}</p>
+                <p>End Date: {{this.end_date}}</p>
+                </li>
+            {{/each}}
+        </ul>
+    {{else}}
+     <p>No careers found. Add career information.</p>
+    {{/if}}
 </ul>

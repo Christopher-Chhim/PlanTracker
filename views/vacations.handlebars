@@ -16,11 +16,17 @@
 </form>
 <hr>
 <ul class="list-group">
-    {{#each vacations}}
-        <li class="list-group-item">
-            <h5>{{this.destination}}</h5>
-            <p>Start Date: {{this.start_date}}</p>
-            <p>End Date: {{this.end_date}}</p>
-        </li>
-    {{/each}}
+    {{#if vacations.length}}
+        <ul>
+            {{#each vacations}}
+                <li class="list-group-item">
+                <h5>{{this.destination}}</h5>
+                <p>Start Date: {{this.start_date}}</p>
+                <p>End Date: {{this.end_date}}</p>
+                </li>
+            {{/each}}
+        </ul>
+    {{else}}
+    <p>No vacation plans made. Plan your next vacation.</p>
+    {{/if}}
 </ul>

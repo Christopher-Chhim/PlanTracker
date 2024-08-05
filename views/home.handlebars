@@ -1,2 +1,13 @@
-<h1>Welcome to PlanTracker</h1>
-<p>Manage and organize your plans across events, shopping lists, vacations, and careers.</p>
+{{> header}}
+<section class="welcome">
+  <h1>Welcome to Your Portal</h1>
+  <p>Manage your career, vacation plans, shopping list, and events all in one place!</p>
+</section>
+
+<section class="content">
+  {{> career}}
+  {{> vacation}}
+  {{> shoppingList}}
+  {{> events}}
+</section>
+{{> footer}}
