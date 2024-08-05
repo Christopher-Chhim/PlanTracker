@@ -16,6 +16,7 @@ User.init(
       primaryKey: true,
       autoIncrement: true,
     },
+<<<<<<< HEAD
     name: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -27,13 +28,22 @@ User.init(
       validate: {
         isEmail: true,
       },
+=======
+    username: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+>>>>>>> main
     },
     password: {
       type: DataTypes.STRING,
       allowNull: false,
+<<<<<<< HEAD
       validate: {
         len: [8],
       },
+=======
+>>>>>>> main
     },
   },
   {
@@ -42,16 +52,23 @@ User.init(
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
         return newUserData;
       },
+<<<<<<< HEAD
       beforeUpdate: async (updatedUserData) => {
         updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
         return updatedUserData;
       },
+=======
+>>>>>>> main
     },
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
+<<<<<<< HEAD
     modelName: 'user',
+=======
+    modelName: 'user_db',
+>>>>>>> main
   }
 );
 

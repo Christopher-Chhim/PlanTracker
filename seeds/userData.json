@@ -1,4 +1,5 @@
 [
+<<<<<<< HEAD
   {
     "name": "Sal",
     "email": "sal@hotmail.com",
@@ -15,3 +16,17 @@
     "password": "password12345"
   }
 ]
+=======
+    {
+      "username": "john_doe",
+      "email": "john@example.com",
+      "password": "password123"
+    },
+    {
+      "username": "jane_doe",
+      "email": "jane@example.com",
+      "password": "password456"
+    }
+  ]
+  
+>>>>>>> main

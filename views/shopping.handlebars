@@ -1,0 +1,21 @@
+<h1>Shopping Lists</h1>
+<form action="/api/shoppingList" method="POST">
+    <div class="form-group">
+        <label for="item">Item</label>
+        <input type="text" class="form-control" id="item" name="item" required>
+    </div>
+    <div class="form-group">
+        <label for="quantity">Quantity</label>
+        <input type="number" class="form-control" id="quantity" name="quantity" value="1" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Item</button>
+</form>
+<hr>
+<ul class="list-group">
+    {{#each shoppingList}}
+        <li class="list-group-item">
+            <h5>{{this.item}}</h5>
+            <p>Quantity: {{this.quantity}}</p>
+        </li>
+    {{/each}}
+</ul>

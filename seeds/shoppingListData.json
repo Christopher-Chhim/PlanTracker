@@ -1,0 +1,28 @@
+[
+    {
+      "item": "Milk",
+      "quantity": 2,
+      "purchased": false
+    },
+    {
+      "item": "Bread",
+      "quantity": 1,
+      "purchased": true
+    },
+    {
+      "item": "Eggs",
+      "quantity": 12,
+      "purchased": false
+    },
+    {
+      "item": "Apples",
+      "quantity": 6,
+      "purchased": true
+    },
+    {
+      "item": "Rice",
+      "quantity": 5,
+      "purchased": false
+    }
+  ]
+  
