@@ -10,7 +10,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 const sess = {
-  secret: process.env.SECRET,
+  secret: Super Secret,
   cookie: {},
   resave: false,
   saveUninitialized: true,
