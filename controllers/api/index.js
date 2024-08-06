@@ -1,14 +1,16 @@
 const router = require('express').Router();
+
 const userRoutes = require('./userRoutes');
 const eventRoutes = require('./eventRoutes');
-const careerRoutes = require('./careerRoutes');
-const shoppingListRoutes = require('./shoppingListRoutes');
 const vacationRoutes = require('./vacationRoutes');
+const shoppingListRoutes = require('./shoppingListRoutes');
+const careerListRoutes = require('./careerRoutes');
 
 router.use('/users', userRoutes);
 router.use('/events', eventRoutes);
-router.use('/careers', careerRoutes);
-router.use('/shopping-list', shoppingListRoutes);
 router.use('/vacations', vacationRoutes);
+router.use('/shoppingList', shoppingListRoutes);
+router.use('/career', careerListRoutes);
+
 
 module.exports = router;

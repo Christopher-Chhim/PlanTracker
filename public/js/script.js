@@ -36,10 +36,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initialize form submissions for different forms
   handleFormSubmit('form[action="/api/users/login"]', "/api/users/login");
   handleFormSubmit('form[action="/api/users/register"]', "/api/users/register");
-  handleFormSubmit('form[action="/events"]', "/api/events");
-  handleFormSubmit('form[action="/shopping"]', "/api/shopping");
-  handleFormSubmit('form[action="/vacations"]', "/api/vacations");
-  handleFormSubmit('form[action="/api/career"]', "/career");
+  handleFormSubmit('form[action="/api/event"]', "/api/event");
+  handleFormSubmit('form[action="/api/shoppingList"]', "/api/shoppingList");
+  handleFormSubmit('form[action="/api/vacation"]', "/api/vacation");
+  handleFormSubmit('form[action="/api/career"]', "/api/career");
 
   // Client-side form validation
   const validateForm = (formSelector, rules) => {
