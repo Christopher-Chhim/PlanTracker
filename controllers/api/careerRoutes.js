@@ -9,10 +9,9 @@ router.post('/', withAuth, async (req, res) => {
       ...req.body,
       user_id: req.session.user_id, // Associate career with the logged-in user
     });
-    res.status(201).json(newCareer);
+    res.status(200).json(newCareer);
   } catch (err) {
-    console.error(err);
-    res.status(400).json({ error: 'Failed to create new career', details: err.message});
+    res.status(400).json(err);
   }
 });
 
@@ -26,8 +25,7 @@ router.get('/', withAuth, async (req, res) => {
     });
     res.status(200).json(careerData);
   } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: 'Failed to retrieve careers', details: err.message });
+    res.status(500).json(err);
   }
 });
 

@@ -1,4 +1,4 @@
-const sequelize = require ('../config/connection');
+const sequelize = require ('../config/connection')
 const { Model, DataTypes } = require('sequelize');
 
 
@@ -7,10 +7,6 @@ const { Model, DataTypes } = require('sequelize');
   Career.init({
     jobTitle: {
       type: DataTypes.STRING,
-      allowNull: false,
-    },
-    description: {
-      type: DataTypes.TEXT,
       allowNull: false,
     },
     company: {
@@ -25,7 +21,6 @@ const { Model, DataTypes } = require('sequelize');
   }, {
     sequelize,
     modelName: 'Career',
-    timestamps: true,
   });
 
 module.exports= Career
