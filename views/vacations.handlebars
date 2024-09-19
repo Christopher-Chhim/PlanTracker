@@ -1,16 +1,16 @@
 <h1>Vacations</h1>
-<form action="/api/vacation" method="POST">
+<form action="/vacations" method="POST">
     <div class="form-group">
         <label for="destination">Destination</label>
         <input type="text" class="form-control" id="destination" name="destination" required>
     </div>
     <div class="form-group">
         <label for="start_date">Start Date</label>
-        <input type="date" class="form-control" id="start_date" name="start_date" required>
+        <input type="date" class="form-control" id="start_date" name="startDate" required>
     </div>
     <div class="form-group">
         <label for="end_date">End Date</label>
-        <input type="date" class="form-control" id="end_date" name="end_date" required>
+        <input type="date" class="form-control" id="end_date" name="endDate" required>
     </div>
     <button type="submit" class="btn btn-primary">Add Vacation</button>
 </form>
@@ -19,8 +19,8 @@
     {{#each vacations}}
         <li class="list-group-item">
             <h5>{{this.destination}}</h5>
-            <p>Start Date: {{this.start_date}}</p>
-            <p>End Date: {{this.end_date}}</p>
+            <p>Start Date: {{this.startDate}}</p>
+            <p>End Date: {{this.endDate}}</p>
         </li>
     {{/each}}
 </ul>

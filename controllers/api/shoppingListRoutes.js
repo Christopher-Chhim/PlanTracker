@@ -3,7 +3,7 @@ const { ShoppingList } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // Route to create a new shopping list item
-router.post('/shoppingList', withAuth, async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
   try {
     const newShoppingListItem = await ShoppingList.create({
       ...req.body,
@@ -16,7 +16,7 @@ router.post('/shoppingList', withAuth, async (req, res) => {
 });
 
 // Route to get all shopping list items associated with the logged-in user
-router.get('/shoppingList', withAuth, async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
     const shoppingListData = await ShoppingList.findAll({
       where: {

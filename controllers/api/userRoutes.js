@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const { User } = require("../../models");
 
-router.post("/users/register", async (req, res) => {
+router.post("/register", async (req, res) => {
   try {
     const userData = await User.create(req.body);
     console.log(userData);
@@ -16,12 +16,13 @@ router.post("/users/register", async (req, res) => {
   }
 });
 
-router.post("/users/login", async (req, res) => {
+router.post("/login", async (req, res) => {
+  console.log(req.body)
   try {
     const userData = await User.findOne({
       where: { username: req.body.username },
     });
-
+    console.log(userData);
     if (!userData) {
       res
         .status(400)

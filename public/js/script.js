@@ -34,12 +34,12 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   // Initialize form submissions for different forms
-  handleFormSubmit('form[action="/api/users/login"]', "/api/users/login");
-  handleFormSubmit('form[action="/api/users/register"]', "/api/users/register");
+  handleFormSubmit('form[action="/login"]', "/api/users/login");
+  handleFormSubmit('form[action="/register"]', "/api/users/register");
   handleFormSubmit('form[action="/events"]', "/api/events");
   handleFormSubmit('form[action="/shopping"]', "/api/shopping");
   handleFormSubmit('form[action="/vacations"]', "/api/vacations");
-  handleFormSubmit('form[action="/api/career"]', "/career");
+  handleFormSubmit('form[action="/career"]', "/api/career");
 
   // Client-side form validation
   const validateForm = (formSelector, rules) => {
@@ -100,3 +100,18 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+const logout = async() => {
+  const response = await fetch('/api/users/logout', {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json' },
+  });
+
+  if (response.ok) {
+      document.location.replace('/');
+  } else { 
+    alert('Failed to log out.');
+  }
+};
+
+document.querySelector('#logout').addEventListener('click', logout);
