@@ -10,16 +10,16 @@
 <body>
 
   <main>
-    <section class="welcome">
+    <div class = "row">
+      <div class = "col">
       <h1>Welcome to the Career Portal</h1>
       <p>Explore various career opportunities and manage your career profile.</p>
-    
     {{#if careers.length}}
       <section class="careers">
         <h2>Your Careers</h2>
         <ul>
           {{#each careers}}
-            <li>{{this.title}} - {{this.description}}</li>
+            <li>{{this.jobTitle}} - {{this.description}}</li>
           {{/each}}
         </ul>
       </section>
@@ -30,16 +30,16 @@
       </section>
     {{/if}}
 
+    </div>
+    <div class = "col">
       <h1>Welcome to the Vacation Portal</h1>
       <p>Explore various vacation sites and manage your vacation plans.</p>
-    
-
-    {{#if vacation.length}}
+    {{#if vacations.length}}
       <section class="vacation">
         <h2>Your Vacations</h2>
         <ul>
-          {{#each vacation}}
-            <li>{{this.title}} - {{this.description}}</li>
+          {{#each vacations}}
+            <li>{{this.destination}}</li>
           {{/each}}
         </ul>
       </section>
@@ -50,15 +50,16 @@
       </section>
     {{/if}}
 
+    </div>
+    <div class = "col">
     <h1>Welcome to the Shopping List Portal</h1>
     <p>Generate a shopping list and keep track of necessary shopping expenses.</p>
-
-    {{#if shoppingList.length}}
+    {{#if shoppingLists.length}}
       <section class="shoppingList">
         <h2>Your Shopping Lists</h2>
         <ul>
           {{#each shoppingLists}}
-            <li>{{this.title}} - {{this.description}}</li>
+            <li>{{this.item}} - {{this.quantity}}</li>
           {{/each}}
         </ul>
       </section>
@@ -69,9 +70,10 @@
       </section>
     {{/if}}
 
+    </div>
+    <div class = "col">
     <h1>Welcome to the Events Portal</h1>
     <p>Generate a list of upcoming events and keep track of important dates.</p>
-
     {{#if events.length}}
       <section class="events">
         <h2>Your Events</h2>
@@ -87,7 +89,8 @@
         <p>You have not added any events yet. Start by creating a new entry for upcoming events!</p>
       </section>
     {{/if}}
-    </section>
+    </div>
+    </div>
   </main>
 </body>
 </html>

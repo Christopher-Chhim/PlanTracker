@@ -5,13 +5,52 @@ const withAuth = require('../utils/auth');
 
 // Home route
 router.get('/', async (req, res) => {
-  try {
+  // try {
+  let careers;
+  let vacations;
+  let shoppingLists;
+  let events;
+
+  if(req.session.user_id){
+    let careersData = await Career.findAll({
+      where: {
+        user_id: req.session.user_id,
+      },
+    })
+    careers = careersData.map((career) => career.get({ plain: true }));
+    const vacationData = await Vacation.findAll({
+      where: {
+        user_id: req.session.user_id,
+      },
+    });
+    vacations = vacationData.map((vacation) => vacation.get({ plain: true }));
+    const shoppingListData = await ShoppingList.findAll({
+      where: {
+        user_id: req.session.user_id,
+      },
+    });
+
+    shoppingLists = shoppingListData.map((list) => list.get({ plain: true }));
+    const eventData = await Event.findAll({
+      where: {
+        user_id: req.session.user_id,
+      },
+    });
+
+    events = eventData.map((event) => event.get({ plain: true }));
+
+
+  }
     res.render('home', {
+      careers,
+      vacations,
+      shoppingLists,
+      events,
       logged_in: req.session.logged_in,
     });
-  } catch (err) {
-    res.status(500).json(err);
-  }
+  // } catch (err) {
+  //   res.status(500).json(err);
+  // }
 });
 
 // Login route
