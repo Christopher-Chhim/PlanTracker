@@ -1,39 +1,245 @@
-    /* Default theme (day) */
-    body {
-      background-color: #ffffff;
-      color: #000000;
-      transition: background-color 0.3s, color 0.3s;
-  }
+/* Global Styles */
+html, body {
+    height: 100%; /* Ensures the page takes up the full height */
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f8fa;
+    color: #333;
+}
 
-  /* Dark theme */
-  body.night-theme {
-      background-color: #333333;
-      color: #ffffff;
-  }
+/* Wrapper for the entire page */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
 
-  .navbar-light {
-      background-color: #f8f9fa;
-  }
+/* Main content wrapper */
+.container {
+    flex: 1; /* This allows the container to grow and take up available space */
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
-  .navbar-light.night-theme {
-      background-color: #343a40;
-  }
+/* Header */
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    font-size: 24px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
 
-  .footer {
-      background-color: #d0dfee;
-  }
+header h1 {
+    margin: 0;
+    font-size: 32px;
+    font-weight: bold;
+}
 
-  .footer.night-theme {
-      background-color: #343a40;
-  }
+header nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 18px;
+}
 
-  /* Button styles */
-  .btn-primary {
-      background-color: #007bff;
-      border-color: #007bff;
-  }
+header nav a:hover {
+    text-decoration: underline;
+}
 
-  .btn-primary.night-theme {
-      background-color: #0056b3;
-      border-color: #004085;
-  }
+.navbar {
+    background-color: #007bff; /* Custom blue background */
+    padding: 15px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-size: 28px;
+    font-weight: bold;
+    color: green !important; /* Override Bootstrap's default light theme color */
+}
+
+.navbar-toggler {
+    border-color: green;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.navbar-nav .nav-link {
+    color: green !important;
+    margin-left: 20px;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffcc00 !important; /* Add a hover effect with a gold color */
+}
+
+.nav-item .active {
+    font-weight: bold;
+}
+
+/* Footer (Sticky) */
+footer {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    box-shadow: 0px -2px 6px rgba(0, 0, 0, 0.1);
+    position: relative; /* Ensure normal positioning initially */
+    bottom: 0;
+    width: 100%;
+    flex-shrink: 0; /* Prevents footer from shrinking */
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Cards for Plans */
+.card {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.card-header {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.card-body {
+    padding: 20px;
+    background-color: #fff;
+}
+
+.card-footer {
+    padding: 10px;
+    background-color: #f1f1f1;
+    text-align: right;
+}
+
+.card-footer button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.card-footer button:hover {
+    background-color: #218838;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Form Styling */
+form {
+    margin: 30px 0;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid green;
+    border-radius: 5px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-weight: bold;
+    color: #333;
+}
+
+.form-control {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+form button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+#logout {
+    cursor: pointer;
+}
+
+
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    header, footer {
+        font-size: 18px;
+    }
+
+    .card-header, .card-body, .card-footer {
+        padding: 15px;
+    }
+
+    .btn-primary, form button {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .navbar-nav .nav-link {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+    
+    .navbar {
+        padding: 10px;
+    }
+
+    .navbar-brand {
+        font-size: 24px;
+    }
+}
