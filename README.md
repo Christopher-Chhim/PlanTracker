@@ -31,20 +31,23 @@ PlanTracker is a robust web application designed to streamline the management an
 
 ## Screenshots
 
-![Homepage](path-to-your-screenshot/homepage.png)
-*Homepage showcasing the dashboard with links to all categories.*
+![Register](/screenshots/register.png)
+*Register showcasing.*
 
-![Events](path-to-your-screenshot/events.png)
-*Events page displaying scheduled appointments and events.*
+![Homepage](/screenshots/homepage.png)
+*Homepage displaying.*
 
-![Shopping Lists](path-to-your-screenshot/shopping-lists.png)
+![Shopping Lists](/screenshots/shoppinglist.png)
 *Shopping Lists page with options to manage and create lists.*
 
-![Vacations](path-to-your-screenshot/vacations.png)
+![Vacations](/screenshots/vacation.png)
 *Vacations page for planning travel itineraries.*
 
-![Careers](path-to-your-screenshot/careers.png)
+![Careers](/screenshots/career.png)
 *Careers page to track goals and job-related tasks.*
+
+![Events](/screenshots/events.png)
+*Events page to track goals on upcoming update.*
 
 ## Technologies Used
 

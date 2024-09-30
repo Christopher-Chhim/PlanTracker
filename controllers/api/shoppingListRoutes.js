@@ -7,6 +7,7 @@ router.post('/', withAuth, async (req, res) => {
   try {
     const newShoppingListItem = await ShoppingList.create({
       ...req.body,
+      
       user_id: req.session.user_id, // Associate shopping list item with the logged-in user
     });
     res.status(200).json(newShoppingListItem);
