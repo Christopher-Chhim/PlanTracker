@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Vacation } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+
 router.post('/', withAuth, async (req, res) => {
   try {
     const newVacation = await Vacation.create({
@@ -11,6 +12,7 @@ router.post('/', withAuth, async (req, res) => {
 
     res.status(200).json(newVacation);
   } catch (err) {
+    
     res.status(400).json(err);
   }
 });
