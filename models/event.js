@@ -35,7 +35,7 @@ Event.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'event',
+    modelName: 'Event',
   }
 );
 
