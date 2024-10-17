@@ -9,7 +9,7 @@ const careerListRoutes = require('./careerRoutes');
 router.use('/users', userRoutes);
 router.use('/events', eventRoutes);
 router.use('/vacations', vacationRoutes);
-router.use('/shoppingList', shoppingListRoutes);
+router.use('/shopping', shoppingListRoutes);
 router.use('/career', careerListRoutes);
 
 

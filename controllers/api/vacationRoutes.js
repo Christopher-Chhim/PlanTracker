@@ -9,6 +9,7 @@ router.post('/', withAuth, async (req, res) => {
       ...req.body,
       user_id: req.session.user_id,
     });
+
     res.status(200).json(newVacation);
   } catch (err) {
     
@@ -19,9 +20,19 @@ router.post('/', withAuth, async (req, res) => {
 // Get all vacation entries for the logged-in user
 router.get('/', withAuth, async (req, res) => {
   try {
-    const vacationData = await Vacation.findAll({
-      where: { user_id: req.session.user_id },
+
+    const vacationData = await Vacation.destroy({
+      where: {
+        id: req.params.id,
+        user_id: req.session.user_id,
+      },
     });
+
+    if (!vacationData) {
+      res.status(404).json({ message: 'No vacation found with this id!' });
+      return;
+    }
+
     res.status(200).json(vacationData);
   } catch (err) {
     res.status(500).json(err);

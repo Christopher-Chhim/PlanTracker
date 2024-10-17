@@ -2,7 +2,6 @@ const router = require('express').Router();
 const { Event } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-// Create a new event
 router.post('/', withAuth, async (req, res) => {
   try {
     const newEvent = await Event.create({
@@ -15,20 +14,13 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
-// Get all events for the logged-in user
-router.delete('/:id', withAuth, async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
-    const eventData = await Event.destroy({
+    const eventData = await Event.findAll({
       where: {
-        id: req.params.id,
         user_id: req.session.user_id,
       },
     });
-
-    if (!eventData) {
-      res.status(404).json({ message: 'No project found with this id!' });
-      return;
-    }
 
     res.status(200).json(eventData);
   } catch (err) {
@@ -36,4 +28,6 @@ router.delete('/:id', withAuth, async (req, res) => {
   }
 });
 
+
 module.exports = router;
+
