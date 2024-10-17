@@ -16,4 +16,5 @@ router.use('/api/shopping', apiRoutesShoppingList );
 router.use('/api/career',  apiRoutesCareers);
 router.use('/api/vacation',  apiRoutesVacation);
 
+
 module.exports = router;

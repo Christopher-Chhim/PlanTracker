@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Vacation } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-
+// Create a new vacation entry
 router.post('/', withAuth, async (req, res) => {
   try {
     const newVacation = await Vacation.create({
@@ -17,8 +17,10 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
-router.delete('/:id', withAuth, async (req, res) => {
+// Get all vacation entries for the logged-in user
+router.get('/', withAuth, async (req, res) => {
   try {
+
     const vacationData = await Vacation.destroy({
       where: {
         id: req.params.id,

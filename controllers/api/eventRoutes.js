@@ -21,10 +21,13 @@ router.get('/', withAuth, async (req, res) => {
         user_id: req.session.user_id,
       },
     });
+
     res.status(200).json(eventData);
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
+
 module.exports = router;
+

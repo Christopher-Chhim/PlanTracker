@@ -18,7 +18,15 @@ const { Model, DataTypes } = require('sequelize');
     endDate: {
       type: DataTypes.DATE,
     },
-  }, {
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user_db',
+        key: 'id',
+      },
+  }, 
+  },
+  {
     sequelize,
     modelName: 'Career',
   });
